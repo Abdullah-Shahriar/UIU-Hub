@@ -1,3 +1,72 @@
 import { heroui } from "@heroui/theme";
 
-export default heroui();
+export default heroui({
+  themes: {
+    light: {
+      colors: {
+        primary: {
+          50: "#FFF4EB",
+          100: "#FFE4CC",
+          200: "#FFC999",
+          300: "#FFAD66",
+          400: "#FF9233",
+          500: "#E8611A",
+          600: "#CC5215",
+          700: "#A64210",
+          800: "#80330C",
+          900: "#592308",
+          DEFAULT: "#E8611A",
+          foreground: "#FFFFFF",
+        },
+        secondary: {
+          50: "#FFF8F0",
+          100: "#FFEFD9",
+          200: "#FFDEB3",
+          300: "#FFCD8D",
+          400: "#FFBC67",
+          500: "#F68B1F",
+          600: "#D9781A",
+          700: "#B36314",
+          800: "#8C4E0F",
+          900: "#66390A",
+          DEFAULT: "#F68B1F",
+          foreground: "#FFFFFF",
+        },
+        focus: "#E8611A",
+      },
+    },
+    dark: {
+      colors: {
+        primary: {
+          50: "#331505",
+          100: "#4D1F08",
+          200: "#80330C",
+          300: "#A64210",
+          400: "#CC5215",
+          500: "#E8611A",
+          600: "#F07A3A",
+          700: "#F5935E",
+          800: "#F9B088",
+          900: "#FCCDB2",
+          DEFAULT: "#E8611A",
+          foreground: "#FFFFFF",
+        },
+        secondary: {
+          50: "#3D2205",
+          100: "#5C3308",
+          200: "#7A440A",
+          300: "#99560D",
+          400: "#D9781A",
+          500: "#F68B1F",
+          600: "#F8A24C",
+          700: "#FAB979",
+          800: "#FBD0A6",
+          900: "#FDE7D3",
+          DEFAULT: "#F68B1F",
+          foreground: "#FFFFFF",
+        },
+        focus: "#E8611A",
+      },
+    },
+  },
+});

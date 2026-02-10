@@ -20,13 +20,13 @@ export const ToolCard = ({
   status = "available",
 }: ToolCardProps) => {
   return (
-    <Card className="max-w-md w-full hover:shadow-lg transition-shadow">
-      <CardHeader className="flex gap-3">
-        <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary">
+    <Card className="w-full hover:shadow-lg transition-shadow">
+      <CardHeader className="flex gap-3 px-4 sm:px-6">
+        <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/10 text-primary flex-shrink-0">
           {icon}
         </div>
-        <div className="flex flex-col">
-          <p className="text-lg font-semibold">{title}</p>
+        <div className="flex flex-col min-w-0">
+          <p className="text-base sm:text-lg font-semibold">{title}</p>
           {status === "coming-soon" && (
             <Chip size="sm" color="warning" variant="flat">
               Coming Soon
@@ -34,10 +34,10 @@ export const ToolCard = ({
           )}
         </div>
       </CardHeader>
-      <CardBody>
-        <p className="text-default-500">{description}</p>
+      <CardBody className="px-4 sm:px-6">
+        <p className="text-default-500 text-sm sm:text-base">{description}</p>
       </CardBody>
-      <CardFooter>
+      <CardFooter className="px-4 sm:px-6 pb-4">
         {status === "available" ? (
           <Button as={Link} href={href} color="primary" variant="flat" className="w-full">
             Open Tool

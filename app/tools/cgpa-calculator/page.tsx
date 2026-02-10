@@ -150,17 +150,17 @@ export default function CGPACalculatorPage() {
   })();
 
   return (
-    <section className="flex flex-col gap-6 py-8">
+    <section className="flex flex-col gap-4 sm:gap-6 py-4 sm:py-8">
       {/* Header */}
       <div className="flex flex-col gap-2">
-        <div className="flex items-center justify-between flex-wrap gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
           <div>
-            <h1 className="text-3xl font-bold">CGPA Calculator</h1>
-            <p className="text-default-500 mt-1">
+            <h1 className="text-2xl sm:text-3xl font-bold">CGPA Calculator</h1>
+            <p className="text-default-500 text-sm sm:text-base mt-1">
               Calculate your GPA & CGPA based on UIU&apos;s official grading policy
             </p>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap">
             <Button
               variant="flat"
               color="secondary"
@@ -185,16 +185,30 @@ export default function CGPACalculatorPage() {
       {/* Grading Table */}
       {showGradingTable && <GradingTable />}
 
+      {/* CGPA Result */}
+      <div ref={resultRef}>
+        {trimesters.length > 0 && (
+          <ResultCard
+            label="Cumulative CGPA"
+            gpa={cgpaResult.cgpa}
+            totalCredits={cgpaResult.totalCredits}
+            totalPoints={cgpaResult.totalPoints}
+            isMain
+            highlighted={highlighted}
+          />
+        )}
+      </div>
+
       {/* Previous Academic Record */}
       <Card className="w-full">
-        <CardHeader className="px-6 pt-5 pb-0">
-          <div className="flex items-center gap-3">
-            <p className="text-xl font-semibold">Previous Academic Record</p>
+        <CardHeader className="px-4 sm:px-6 pt-4 sm:pt-5 pb-0">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <p className="text-lg sm:text-xl font-semibold">Previous Academic Record</p>
             <Chip size="sm" variant="flat" color="default">Optional</Chip>
           </div>
         </CardHeader>
-        <Divider className="mt-4" />
-        <CardBody className="px-6 py-6">
+        <Divider className="mt-3 sm:mt-4" />
+        <CardBody className="px-4 sm:px-6 py-4 sm:py-6">
           <div className="flex flex-col sm:flex-row gap-3">
             <Input
               type="number"
@@ -229,30 +243,16 @@ export default function CGPACalculatorPage() {
         </CardBody>
       </Card>
 
-      {/* CGPA Result */}
-      <div ref={resultRef}>
-        {trimesters.length > 0 && (
-          <ResultCard
-            label="Cumulative CGPA"
-            gpa={cgpaResult.cgpa}
-            totalCredits={cgpaResult.totalCredits}
-            totalPoints={cgpaResult.totalPoints}
-            isMain
-            highlighted={highlighted}
-          />
-        )}
-      </div>
-
       {/* Trimesters */}
       {trimesterResults.map((trimester, index) => (
         <Card key={trimester.id} className="w-full">
-          <CardHeader className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 px-6 pt-5">
-            <div className="flex items-center gap-3">
+          <CardHeader className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 px-4 sm:px-6 pt-4 sm:pt-5">
+            <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
               <input
                 type="text"
                 value={trimester.name}
                 onChange={(e) => updateTrimesterName(trimester.id, e.target.value)}
-                className="text-xl font-semibold bg-transparent border-none outline-none focus:ring-2 focus:ring-primary rounded px-1 -ml-1"
+                className="text-lg sm:text-xl font-semibold bg-transparent border-none outline-none focus:ring-2 focus:ring-primary rounded px-1 -ml-1 max-w-[200px] sm:max-w-none"
                 style={{ width: `${Math.max(trimester.name.length, 10)}ch` }}
               />
               {trimester.result.gpa > 0 && (
@@ -297,7 +297,7 @@ export default function CGPACalculatorPage() {
             </div>
           </CardHeader>
           <Divider />
-          <CardBody className="px-6 py-4">
+          <CardBody className="px-4 sm:px-6 py-3 sm:py-4">
             {/* Table Header — matches CourseRow grid */}
             <div className="hidden sm:grid grid-cols-[40px_1fr_110px_140px_40px] gap-2 mb-3">
               <div className="flex items-center justify-center text-xs font-medium text-default-400">#</div>
@@ -376,8 +376,8 @@ export default function CGPACalculatorPage() {
 
       {/* Formula Explanation */}
       <Card className="w-full">
-        <CardBody className="px-6 py-5">
-          <h3 className="font-semibold text-lg mb-3">How GPA & CGPA is Calculated</h3>
+        <CardBody className="px-4 sm:px-6 py-4 sm:py-5">
+          <h3 className="font-semibold text-base sm:text-lg mb-3">How GPA & CGPA is Calculated</h3>
           <div className="text-default-500 text-sm space-y-2">
             <p>
               <strong>GPA</strong> (Grade Point Average) is the weighted average grade of a single trimester.

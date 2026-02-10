@@ -43,11 +43,11 @@ export default function RootLayout({
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex flex-col min-h-screen">
             <Navbar />
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+            <main className="container mx-auto max-w-7xl pt-8 sm:pt-16 px-4 sm:px-6 flex-grow">
               {children}
             </main>
-            <footer className="w-full flex items-center justify-center py-6 border-t border-divider">
-              <p className="text-default-500 text-sm">
+            <footer className="w-full flex items-center justify-center py-4 sm:py-6 px-4 border-t border-divider">
+              <p className="text-default-500 text-xs sm:text-sm text-center">
                 © {new Date().getFullYear()}{" "}
                 <span className="text-primary font-semibold">UIU Hub</span> — Built for{" "}
                 <a

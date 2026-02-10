@@ -53,7 +53,7 @@ export const GradingTable = () => {
           </p>
         </div>
       </CardHeader>
-      <CardBody className="px-6 py-4">
+      <CardBody className="px-3 sm:px-6 py-4 overflow-x-auto">
         <Table
           aria-label="UIU Grading Policy Table"
           removeWrapper

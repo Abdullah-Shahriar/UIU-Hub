@@ -51,15 +51,15 @@ export const ResultCard = ({
           : ""
       }`}
     >
-      <CardBody className="px-6 py-5">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="flex-1">
-            <p className="text-sm text-default-400 font-medium">{label}</p>
+      <CardBody className="px-4 sm:px-6 py-4 sm:py-5">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
+          <div className="flex-1 min-w-0">
+            <p className="text-xs sm:text-sm text-default-400 font-medium">{label}</p>
             <div className="flex items-baseline gap-2 mt-1">
               <span
-                className={`text-4xl font-bold transition-all duration-500 ${
+                className={`text-3xl sm:text-4xl font-bold transition-all duration-500 ${
                   isMain ? "text-primary" : ""
-                } ${highlighted ? "text-5xl" : ""}`}
+                } ${highlighted ? "sm:text-5xl text-4xl" : ""}`}
               >
                 {gpa > 0 ? gpa.toFixed(2) : "0.00"}
               </span>

@@ -14,6 +14,7 @@ import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
 import { LuGithub } from "react-icons/lu";
+import Image from "next/image";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
@@ -24,9 +25,14 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-2" href="/">
-            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-primary-foreground font-bold text-sm">
-              U
-            </div>
+            <Image
+              src="/uiu-logo.png"
+              alt="UIU Logo"
+              width={36}
+              height={36}
+              className="flex-shrink-0"
+              priority
+            />
             <p className="font-bold text-inherit text-lg">UIU Hub</p>
           </NextLink>
         </NavbarBrand>

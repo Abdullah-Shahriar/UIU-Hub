@@ -38,21 +38,21 @@ export default function Home() {
   ];
 
   return (
-    <section className="flex flex-col items-center gap-8 py-8 md:py-12">
+    <section className="flex flex-col items-center gap-6 sm:gap-8 py-6 sm:py-8 md:py-12">
       {/* Hero Section */}
-      <div className="text-center max-w-2xl">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+      <div className="text-center max-w-2xl px-2">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
           Welcome to{" "}
           <span className="text-primary">UIU Hub</span>
         </h1>
-        <p className="mt-4 text-lg text-default-500">
+        <p className="mt-3 sm:mt-4 text-base sm:text-lg text-default-500">
           Your all-in-one toolkit for United International University.
           Tools designed to make student life easier.
         </p>
       </div>
 
       {/* Tools Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 w-full max-w-4xl mt-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full max-w-4xl mt-2 sm:mt-4">
         {tools.map((tool) => (
           <ToolCard key={tool.title} {...tool} />
         ))}

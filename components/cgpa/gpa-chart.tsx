@@ -105,7 +105,7 @@ export const GPAChart = ({ data }: GPAChartProps) => {
   if (validData.length === 0) {
     return (
       <Card className="w-full">
-        <CardBody className="px-6 py-10 text-center">
+        <CardBody className="px-3 sm:px-6 py-8 sm:py-10 text-center">
           <p className="text-default-400 text-sm">
             Enter grades in your trimesters to see the GPA trend chart
           </p>
@@ -126,8 +126,8 @@ export const GPAChart = ({ data }: GPAChartProps) => {
 
   return (
     <Card className="w-full">
-      <CardBody className="px-6 py-5">
-        <div className="flex items-center justify-between mb-4">
+      <CardBody className="px-2 sm:px-6 py-4 sm:py-5">
+        <div className="flex items-center justify-between mb-3 sm:mb-4 px-1 sm:px-0">
           <Chip color="success" variant="flat" size="sm" className="font-semibold">
             Result Summary
           </Chip>
@@ -177,7 +177,7 @@ export const GPAChart = ({ data }: GPAChartProps) => {
           </div>
         </div>
 
-        <p className="text-[11px] text-default-400 mb-2 text-center">
+        <p className="hidden sm:block text-[11px] text-default-400 mb-2 text-center">
           Scroll over chart to zoom
         </p>
 
@@ -187,7 +187,7 @@ export const GPAChart = ({ data }: GPAChartProps) => {
               width={chartWidth}
               height={CHART_HEIGHT}
               data={validData}
-              margin={{ top: 30, right: 50, left: 50, bottom: 10 }}
+              margin={{ top: 30, right: 30, left: 30, bottom: 10 }}
             >
               <XAxis
                 dataKey="name"
