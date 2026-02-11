@@ -31,8 +31,8 @@ export async function POST(req: NextRequest) {
   const pdfParser = new PDFParser();
 
   const parsePromise = new Promise((resolve, reject) => {
-    pdfParser.on("pdfParser_dataError", (errData: Record<"parserError", Error>) => {
-      console.error(errData.parserError);
+    pdfParser.on("pdfParser_dataError", (errData: Error | { parserError: Error }) => {
+      console.error(errData instanceof Error ? errData : errData.parserError);
       reject(new Error("Failed to parse PDF"));
     });
     pdfParser.on("pdfParser_dataReady", (pdfData: PDFData) => {

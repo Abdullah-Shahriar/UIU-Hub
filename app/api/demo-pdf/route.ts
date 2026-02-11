@@ -31,8 +31,8 @@ export async function GET(): Promise<NextResponse> {
     return new Promise<NextResponse>((resolve) => {
       const pdfParser = new PDFParser();
 
-      pdfParser.on('pdfParser_dataError', (errData: Record<"parserError", Error>) => {
-        console.error('PDF parsing error:', errData.parserError);
+      pdfParser.on('pdfParser_dataError', (errData: Error | { parserError: Error }) => {
+        console.error('PDF parsing error:', errData instanceof Error ? errData : errData.parserError);
         resolve(NextResponse.json({ error: 'Failed to parse the pre-uploaded PDF file' }, { status: 500 }));
       });
 
