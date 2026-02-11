@@ -67,9 +67,9 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({ className, classNames }) => 
         })}
       >
         {!isSelected || isSSR ? (
-          <LuSun size={22} />
+          <LuSun size={22} className="theme-icon" />
         ) : (
-          <LuMoon size={22} />
+          <LuMoon size={22} className="theme-icon" />
         )}
       </div>
     </Component>

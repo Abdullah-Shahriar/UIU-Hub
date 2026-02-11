@@ -12,12 +12,12 @@ export default function Home() {
       status: "available" as const,
     },
     {
-      title: "Routine Planner",
+      title: "Section Planner",
       description:
-        "Plan and organize your class routine for the trimester. Avoid scheduling conflicts easily.",
+        "Smart section selector with AI-powered schedule planning. Upload UIU's routine PDF and create conflict-free schedules.",
       href: "/tools/routine-planner",
       icon: <LuCalendar size={24} />,
-      status: "coming-soon" as const,
+      status: "available" as const,
     },
     {
       title: "Course Tracker",

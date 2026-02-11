@@ -16,6 +16,10 @@ export const siteConfig = {
       label: "CGPA Calculator",
       href: "/tools/cgpa-calculator",
     },
+    {
+      label: "Section Planner",
+      href: "/tools/routine-planner",
+    },
   ],
   navMenuItems: [
     {
@@ -29,6 +33,10 @@ export const siteConfig = {
     {
       label: "CGPA Calculator",
       href: "/tools/cgpa-calculator",
+    },
+    {
+      label: "Section Planner",
+      href: "/tools/routine-planner",
     },
   ],
   links: {
