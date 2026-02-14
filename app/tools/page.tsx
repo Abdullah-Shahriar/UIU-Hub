@@ -1,4 +1,4 @@
-import { LuCalculator, LuCalendar, LuBookOpen, LuClipboardList } from "react-icons/lu";
+import { LuCalculator, LuCalendar, LuBookOpen, LuClipboardList, LuBanknote } from "react-icons/lu";
 import { ToolCard } from "@/components/tool-card";
 
 export default function ToolsPage() {
@@ -17,6 +17,14 @@ export default function ToolsPage() {
         "Smart section selector with AI-powered schedule planning. Upload UIU's routine PDF and create conflict-free schedules.",
       href: "/tools/routine-planner",
       icon: <LuCalendar size={24} />,
+      status: "available" as const,
+    },
+    {
+      title: "Tuition Fees Calculator",
+      description:
+        "Calculate your tuition fees based on UIU's official fee structure. Includes undergraduate, graduate programs and waiver options.",
+      href: "/tools/tuition-fees-calculator",
+      icon: <LuBanknote size={24} />,
       status: "available" as const,
     },
     {
